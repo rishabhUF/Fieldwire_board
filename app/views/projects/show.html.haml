@@ -6,6 +6,7 @@
 	- @floorplans.each do |floorplan|
 		.comment
 			%p.username= floorplan.name
+			%p= image_tag floorplan.image_url.to_s
 
 	= render "floorplans/form"
 
