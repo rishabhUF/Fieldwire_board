@@ -8,7 +8,7 @@ class FloorplansController < ApplicationController
 		if @floorplan.save
 			redirect_to project_path(@project)
 		else
-			render @project
+			redirect_to @project
 		end
 	end
 end

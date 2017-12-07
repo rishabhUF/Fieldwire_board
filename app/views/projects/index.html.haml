@@ -1,3 +1,11 @@
-- @projects.each do |project|
-	%h1= link_to project.title, project
-	
+#posts
+	- @projects.each do |project|
+		.post
+			.post_content
+				.title
+					%h1= link_to project.title, project
+				.data.clearfix
+					%p.username
+						Number of floorplans
+						= project.floorplans.count
+

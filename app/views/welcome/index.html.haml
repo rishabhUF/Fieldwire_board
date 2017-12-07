@@ -1,1 +1,21 @@
-%h1= "This is welcome page"
+#banner
+	.banner_content
+		%h1 FieldWire
+		%p The construction app for the field
+		%button= link_to "Sign Up", new_user_registration_path
+#testimonial
+	.wrapper
+		%p.quote "Join 200,000+ projects who trust Fieldwire every day to save time and money on-site."
+		%p.name  "An integrated construction app Our native construction apps for Android, iPhone and iPad work together as a connected cloud platform. Fieldwire integrates with some of the best apps for builders to extend your current technology to the field."
+#callouts
+	.callout_inner
+		.wrapper
+			.callout
+#bottom_cta
+	.wrapper
+		%h2 Sign up for Demo!
+		%p I want you to sign up... If you don’t. I will find you!
+		%button= link_to "Click Meee!!!", new_user_registration_path
+
+%footer
+	%p &copy; Rishabh Sharma
