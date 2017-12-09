@@ -29,6 +29,17 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+   process :save_content_type_and_size_in_model
+
+  def save_content_type_and_size_in_model
+    model.content_type = file.content_type if file.content_type
+    model.file_size = file.size
+    puts file.size
+    puts model.content_type
+  end
+
+
+
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

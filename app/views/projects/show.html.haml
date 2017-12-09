@@ -3,11 +3,11 @@
 
 #comments
 	%h2.comment_count= pluralize(@project.floorplans.count, "Floorplans")
-	- @floorplans.each do |floorplan|
+	- @project.floorplans.each do |floorplan|
 		.comment
-			%p.username= floorplan.name
-			%p= image_tag floorplan.image_url.to_s
-
+			/ %p.username= floorplan.name
+			/ = link_to "Edit", edit_project_floorplan_path(@project,floorplan)
+			%h3= link_to floorplan.name, project_floorplan_path(floorplan)
 	= render "floorplans/form"
 
 = link_to "Back", root_path

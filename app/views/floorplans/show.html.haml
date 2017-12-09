@@ -1,0 +1,10 @@
+%h1= @floorplan.name
+
+#comments
+	%h2.comment_count= pluralize(@floorplan.versions.count, "Versions")
+	- @floorplan.versions.each do |version|
+		.comment
+			%p.username= version.name
+			%p= image_tag version.image_url.to_s
+			
+	= render 'versions/form'

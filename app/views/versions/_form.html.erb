@@ -1,0 +1,14 @@
+<%= form_for([@project, @floorplan, @floorplan.versions.build], :html => { :multipart => true }) do |f| %>
+   <div class="field">
+     <%= f.label :name %><br>
+     <%= f.text_field :name %>
+   </div>
+   <div class="field", id="new_painting">
+     <%= f.label :image %><br>
+     <%= f.file_field :image%>
+   </div>
+   <div class="actions">
+     <%= f.submit %>
+   </div>
+<% end %>	
+

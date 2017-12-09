@@ -1,0 +1,14 @@
+<h1>Editing Floorplans</h1>
+<%= form_for([@floorplan.project, @floorplan]) do |f| %>
+  <div class="field">
+     <%= f.label :name %><br>
+     <%= f.text_field :name %>
+   </div>
+   <div class="field", id="new_painting">
+     <%= f.label :image %><br>
+     <%= f.file_field :image, name: "floorplan[image][]"%>
+   </div>
+   <div class="actions">
+     <%= f.submit %>
+   </div>
+<% end %>

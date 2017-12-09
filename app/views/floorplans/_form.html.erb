@@ -4,11 +4,12 @@
      <%= f.label :name %><br>
      <%= f.text_field :name %>
    </div>
-   <div class="field", id="new_painting">
+   <!-- <div class="field", id="new_painting">
      <%= f.label :image %><br>
-     <%= f.file_field :image %>
+     <%= f.file_field :image, :multiple => true, name: "floorplan[image][]"%> -->
    </div>
    <div class="actions">
      <%= f.submit %>
    </div>
 <% end %>	
+

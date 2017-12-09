@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206191338) do
+ActiveRecord::Schema.define(version: 20171208212555) do
 
   create_table "floorplans", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,19 @@ ActiveRecord::Schema.define(version: 20171206191338) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "versions", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "floorplan_id"
+    t.integer "project_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["floorplan_id"], name: "index_versions_on_floorplan_id"
+    t.index ["project_id"], name: "index_versions_on_project_id"
+    t.index ["user_id"], name: "index_versions_on_user_id"
   end
 
 end
